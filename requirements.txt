@@ -1,0 +1,4 @@
+Flask
+firebase_admin
+waitress
+requests

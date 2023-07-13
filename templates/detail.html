@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autobuilder</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        /* Add your custom styles here */
+        /* Example styles for the header */
+        header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .tab a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+        }
+
+        .tab a:hover {
+            background-color: #ddd;
+        }
+
+        /* Additional styles for the upload form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            background-color: #45a049;
+        }
+        /* Additional styles for the file details section */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
+        .file-details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .file-image {
+            width: 300px; /* Increase the width to your desired size */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px;
+        }
+        
+        .file-info {
+            text-align: left;
+            word-wrap: break-word; /* Add word wrap */
+        }
+        .button{
+            text-align: center;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        p {
+            color: #555;
+        }
+        
+        .download-button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .download-button:hover {
+            background-color: #45a049;
+        }
+
+        .donate-button {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .donate-button a {
+            display: inline-block;
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .donate-button a:hover {
+            background-color: #ff4f97;
+        }
+
+        .donate-button a span {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="tab">
+                <a href="/">Home</a>
+            </div>
+            <div class="tab">
+                <a href="/guide">Guide</a>
+            </div>
+            <div class="tab">
+                <a href="/upload">Upload</a>
+            </div>
+        </div>
+        <div class="donate-button">
+            <a href="https://paypal.me/plantcraft94?country.x=VN&locale.x=en_US">
+                <span>&#10084;</span> Donate
+            </a>
+        </div>
+    </header>
+
+    <div class="file-details">
+        <h2>{{ dName }}</h2>
+        <img src={{dImage}} alt="File Image" class="file-image">
+        <div class="file-info">
+            <p>{{dDisc}}</p>
+        <div class="button">
+            <a href="{{ dDownload }}" class="download-button">Download</a>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

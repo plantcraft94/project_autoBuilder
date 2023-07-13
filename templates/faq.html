@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autobuilder</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        /* Add your custom styles here */
+        /* Example styles for the header */
+        header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .tab a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+        }
+
+        .tab a:hover {
+            background-color: #ddd;
+        }
+
+        /* Additional styles for the upload form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .donate-button {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .donate-button a {
+            display: inline-block;
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .donate-button a:hover {
+            background-color: #ff4f97;
+        }
+
+        .donate-button a span {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="tab">
+                <a href="/">Home</a>
+            </div>
+            <div class="tab">
+                <a href="/guide">Guide</a>
+            </div>
+            <div class="tab">
+                <a href="/upload">Upload</a>
+            </div>
+        </div>
+        <div class="donate-button">
+            <a href="https://paypal.me/plantcraft94?country.x=VN&locale.x=en_US">
+                <span>&#10084;</span> Donate
+            </a>
+        </div>
+    </header>
+    <h1>How to share your build</h1>
+
+    <p>1. Export your build here: <a href="https://www.marcrobledo.com/savegame-editors/zelda-totk/">https://www.marcrobledo.com/savegame-editors/zelda-totk/</a></p>
+
+    <p>2. Upload an image of your build online via Imgur or any other platform, and copy the link.</p>
+
+    <p>3. Go to the Upload tab and fill in all the information about your build, including the build's name, a link to the image of your build, the .totkab file obtained from the savegame editor, and the description of your build (you can include details such as the list of required Zonai devices and the number of Zonaite it costs).</p>
+
+    <p>4. Click on the Upload button and wait for the upload to finish.</p>
+
+    <h1>How to download a build</h1>
+
+    <p>1. Go to the Home page, find the build and click on "Detail", it will take you to the detail page of the build you choose.</p>
+
+    <p>2. Click on the Download button, which will take you to a gofile.io page.</p>
+
+    <p>3. Download the .totkab file from the gofile.io page.</p>
+
+    <p>4. Import the build in the savegame editor at <a href="https://www.marcrobledo.com/savegame-editors/zelda-totk/">https://www.marcrobledo.com/savegame-editors/zelda-totk/</a></p>
+
+    <p class="disclaimer"><strong>NOTE:</strong></p>
+
+    <ul>
+        <li>You should always backup your savegame before importing/exporting a build.</li>
+        <li>After uploading the build, you can't edit or delete it anymore because there is no account system, so please be careful.</li>
+    </ul>
+
+    <p>Have fun!</p>
+
+
+
+    <!-- Add your content here -->
+</body>
+</html>
