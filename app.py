@@ -85,7 +85,7 @@ def upload():
         uDisc = request.form["description"]
         print(uname, uImage, uDisc)
 
-        if totkab_file and totkab_file.filename.endswith(".totkab"):
+        if totkab_file and totkab_file.filename.endswith(".cai"):
             # Save the file locally
             totkab_file.save(totkab_file.filename)
 
@@ -97,7 +97,7 @@ def upload():
             if gofile_url:
                 # File uploaded successfully, redirect to the download page
                 upload_to_db(uname, uImage, gofile_url, uDisc)
-                return f"File uploaded successfully. Download it <a href='{gofile_url}'>here</a>."
+                return f"File uploaded successfully. Return to <a href='https://autobuildshare.glitch.me/'>Home page</a>."
             else:
                 # Error uploading file to GoFile
                 return f"Error uploading file: {gofile_url}"

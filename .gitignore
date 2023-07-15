@@ -2,3 +2,6 @@
 /cred
 /glitch.json
 /.data
+/.local
+/.cache
+/.env
