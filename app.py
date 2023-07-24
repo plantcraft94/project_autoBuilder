@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
-import requests
 import os
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
+import pixeldrain
 
 # Fetch the service account key JSON file contents
 cred = credentials.Certificate(".data/firebase-adminsdk.json")
@@ -16,21 +16,9 @@ firebase_admin.initialize_app(
 )
 
 
-def upload_totkab_to_gofile(totkab_file):
-    url = "https://api.gofile.io/getServer"
-    response = requests.get(url)
-    if response.ok:
-        store = response.json().get("data", {}).get("server")
-    url = f"https://{store}.gofile.io/uploadFile"
-    with open(totkab_file, "rb") as file:
-        files = {"file": file}
-        response = requests.post(url, files=files)
-    if response.ok:
-        # File uploaded successfully
-        return response.json().get("data", {}).get("downloadPage")
-
-    # Error uploading file
-    return response.json()
+def upload_totkab_to_pixeldrain(totkab_file):
+    upload_details = pixeldrain.upload_file(totkab_file)
+    return "https://pixeldrain.com/u/" + upload_details["id"]
 
 
 def upload_to_db(name, image_link, download_link, description):
@@ -90,7 +78,7 @@ def upload():
             totkab_file.save(totkab_file.filename)
 
             # Upload the file to GoFile
-            gofile_url = upload_totkab_to_gofile(totkab_file.filename)
+            gofile_url = upload_totkab_to_pixeldrain(totkab_file.filename)
             # Delete the local file
             os.remove(totkab_file.filename)
 
