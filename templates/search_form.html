@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autobuildshare</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        /* Add your custom styles here */
+        /* Example styles for the header */
+        header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .tab a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+        }
+
+        .tab a:hover {
+            background-color: #ddd;
+        }
+
+        /* Additional styles for the search form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .donate-button {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .donate-button a {
+            display: inline-block;
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .donate-button a:hover {
+            background-color: #ff4f97;
+        }
+
+        .donate-button a span {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="tab">
+                <a href="/">Home</a>
+            </div>
+            <div class="tab">
+                <a href="/guide">Guide</a>
+            </div>
+            <div class="tab">
+                <a href="/upload">Upload</a>
+            </div>
+            <div class="tab">
+                <a href="/search">Search</a>
+            </div>
+        </div>
+        <div class="donate-button">
+            <a href="https://paypal.me/plantcraft94?country.x=VN&locale.x=en_US">
+                <span>&#10084;</span> Donate
+            </a>
+        </div>
+    </header>
+
+    <h1>Find builds</h1>
+    
+    <form method="POST" action="/search">
+        <div>
+            <label for="query">Enter your search query:</label>
+            <input type="text" name="query" id="query" placeholder="Search..." required>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Search">
+        </div>
+    </form>
+</body>
+</html>

@@ -113,5 +113,41 @@ def detail(route):
     return "404"
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    if request.method == "POST":
+        query = request.form.get("query")
+        results = perform_search(query)
+        Name = []
+        Image = []
+        routes = []
+        for i in results:
+            refs = db.reference(i)
+            Name.append(refs.get()["Name"])
+            Image.append(refs.get()["Image"])
+            routes.append(i)
+        data = [
+            {"id": id, "image": image, "route": route}
+            for id, image, route in zip(Name, Image, routes)
+        ]
+        return render_template("search_results.html", data=data)
+    else:
+        return render_template("search_form.html")
+
+
+def perform_search(query):
+    # Get a reference to the database
+    ref = db.reference("/")
+
+    # Perform the search
+    results = []
+    data = ref.get()
+    for key, value in data.items():
+        if query in str(value):
+            results.append(key)
+
+    return results
+
+
 if __name__ == "__main__":
     app.run()
